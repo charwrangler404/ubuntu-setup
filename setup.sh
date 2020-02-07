@@ -5,7 +5,7 @@
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install -y terminator neovim zsh git
-sudo apt-get install -y neofetch htop vlc
+sudo apt-get install -y neofetch htop vlc curl wget
 sudo apt-get install -y python3-pip
 
 # Set up zsh
