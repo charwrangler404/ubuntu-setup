@@ -12,6 +12,8 @@ sudo apt-get install -y python3-pip
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 chsh -s $(which zsh)
 
+sed 's/robbyrussell/steeef/g' ~/.zshrc >> ~/.zshrc
+
 # Set up aliases
 echo "alias vim=nvim" >> ~/.zshrc
 echo "alias vi=nvim" >> ~/.zshrc
@@ -32,10 +34,3 @@ sudo dpkg -i ./deb/nordvpn-release_1.0.0_all.deb
 sudo apt-get update
 sudo apt-get install -y nordvpn
 
-# Configure data mount
-sudo mkdir /data
-sudo echo "$(sudo blkid /dev/sdb1 | cut -d ' ' -f 2)    /data   ext4    defaults,rw     1   1" >> /etc/fstab
-sudo mount -a
-
-# Finally, reboot the system
-reboot
